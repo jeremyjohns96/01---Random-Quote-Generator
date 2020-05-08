@@ -39,10 +39,10 @@ bodyTag.style.backgroundColor = test1[pick];}
 
 //Quote Selector Function: Picks a Random Quote from the 'quotes' array when called//
 var i=0; j=0
-function getRandomFunction(quotes) {
- while (j == i ) {
-   j = Math.floor(Math.random()*quotes.length);
- }
+function getRandomQuote(quotes) {
+ do {
+   j = Math.floor(Math.random()*quotes.length);}
+ while (j == i);
  i = j;
  let selectedQuote = quotes[i];  
  return selectedQuote; }
@@ -52,7 +52,7 @@ function getRandomFunction(quotes) {
 //3) Formates the properties of the selected quote in html format 4)Updates the innerHTML with the new quote
 function printQuote() {
  changeBackgroundFunction();
- let selected = getRandomFunction(quotes);
+ let selected = getRandomQuote(quotes);
  a=document.querySelector('.quote-box');
  let html; 
  html = `<p class="quote">${selected.quote}</p> <p class="source">${selected.source}`;
