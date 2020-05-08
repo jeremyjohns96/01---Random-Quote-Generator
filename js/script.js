@@ -33,7 +33,6 @@ while (k == pick){
   k = Math.floor(Math.random()*6); }
 pick = k;
 console.log(pick);
-let bodyTag = document.querySelector('body');
 bodyTag.style.backgroundColor = test1[pick];}
 /////End/////
 
@@ -44,7 +43,7 @@ function getRandomQuote(quotes) {
    j = Math.floor(Math.random()*quotes.length);}
  while (j == i);
  i = j;
- let selectedQuote = quotes[i];  
+ let selectedQuote = quotes[j];  
  return selectedQuote; }
 /////End/////
 
