@@ -1,3 +1,4 @@
+////Quotes////
 var quotes = [
 {quote:"Be yourself everyone else is already taken",
 source:"Oscar Wilde",
@@ -21,8 +22,9 @@ citation: "A Testament of Hope: The Essential Writings and Speeches ",
 year: "1986",
 tag: "Tag: Humanity"}
 ];
+///End///
 
-//Color Picker Function Bundle//
+//Color Picker Function: Picks a Random Color and changes the background when called//
 let pick = 0;
 let k = 0;
 const test1 = ['#FF851B','#0074D9','#7FDBFF','#39CCCC', '#3D9970', '#3AC162'];
@@ -35,6 +37,7 @@ let bodyTag = document.querySelector('body');
 bodyTag.style.backgroundColor = test1[pick];}
 /////End/////
 
+//Quote Selector Function: Picks a Random Quote from the 'quotes' array when called//
 var i=0; j=0
 function getRandomFunction(quotes) {
  while (j == i ) {
@@ -43,8 +46,10 @@ function getRandomFunction(quotes) {
  i = j;
  let selectedQuote = quotes[i];  
  return selectedQuote; }
+/////End/////
 
-
+///Main function: 1)Calls changeBackground() function . 2) Calls getrandomFunction() . 
+//3) Formates the properties of the selected quote in html format 4)Updates the innerHTML with the new quote
 function printQuote() {
  changeBackgroundFunction();
  let selected = getRandomFunction(quotes);
@@ -60,11 +65,11 @@ function printQuote() {
  html += `<div class="tag">${selected.tag}</div>`; }
  a.innerHTML = html;
   }
- 
+ /////End/////
 
-
+///Timer Component: Changes Quote & Background every 4 seconds///
 var Timer = setInterval(printQuote,5000);
 
-
+///Button: Show another Quote : Event Listener///
 var myEvent = document.getElementById('load-quote');
 myEvent.addEventListener("click",()=>{printQuote()});
