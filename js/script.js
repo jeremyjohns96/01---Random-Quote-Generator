@@ -1,3 +1,4 @@
+console.log('JS Script is connected');
 ////Quotes////
 var quotes = [
 {quote:"Be yourself everyone else is already taken",
@@ -24,11 +25,13 @@ tag: "Tag: Humanity"}
 ];
 ///End///
 
+bodyTag = document.getElementsByTagName('body')[0];
+
 //Color Picker Function: Picks a Random Color and changes the background when called//
 let pick = 0;
 let k = 0;
 const test1 = ['#FF851B','#0074D9','#7FDBFF','#39CCCC', '#3D9970', '#3AC162'];
-function changeBackgroundFunction () {
+function changeBackground() {
 while (k == pick){
   k = Math.floor(Math.random()*6); }
 pick = k;
@@ -50,7 +53,7 @@ function getRandomQuote(quotes) {
 ///Main function: 1)Calls changeBackground() function . 2) Calls getrandomFunction() . 
 //3) Formates the properties of the selected quote in html format 4)Updates the innerHTML with the new quote
 function printQuote() {
- changeBackgroundFunction();
+ changeBackground();
  let selected = getRandomQuote(quotes);
  a=document.querySelector('.quote-box');
  let html; 
